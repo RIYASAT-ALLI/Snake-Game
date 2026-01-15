@@ -8,18 +8,18 @@
   body {
     margin: 0;
     height: 100vh;
-    background: radial-gradient(circle, #0a0a0a, #000);
+    background: radial-gradient(circle, #ffffff, #887c7c);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
-    color: #02d1e4;
+    color: #000000;
   }
 
   h1 {
     margin-bottom: 10px;
-    text-shadow: 0 0 15px #2439fa;
+    text-shadow: 0 0 15px #ffffff;
   }
 
   .info {
@@ -28,9 +28,9 @@
   }
 
   canvas {
-    background: #000;
-    border: 3px solid #5a5e5a;
-    box-shadow: 0 0 20px #30717b;
+    background: #f1eaea;
+    border: 3px solid #000000;
+    box-shadow: 0 0 20px #ffffffd9;
   }
 
   .buttons {
@@ -40,16 +40,16 @@
   button {
     padding: 8px 18px;
     margin: 0 5px;
-    background: #000;
-    color: #0695dc;
-    border: 2px solid #09809a;
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
     cursor: pointer;
     font-size: 14px;
   }
 
   button:hover {
-    background: #0fc899;
-    color: #000;
+    background: #33d68c;
+    color: #2a0808;
   }
 </style>
 </head>
@@ -99,7 +99,6 @@ function randomFood() {
 
 function changeDirection(e) {
   if (!running) return;
-
   if (e.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
   if (e.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
   if (e.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
@@ -127,11 +126,11 @@ function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   snake.forEach((part, i) => {
-    ctx.fillStyle = i === 0 ? "#00ff00" : "#00aa00";
+    ctx.fillStyle = i === 0 ? "#33d68c" : "#358853";
     ctx.fillRect(part.x, part.y, box, box);
   });
 
-  ctx.fillStyle = "red";
+  ctx.fillStyle = "#65342b";
   ctx.fillRect(food.x, food.y, box, box);
 
   let head = { ...snake[0] };
